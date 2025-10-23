@@ -1,0 +1,35 @@
+за package.JSON смяна на модулна система и старт devScript
+
+ ---  "type": "module",   --------- под лиценза
+
+ ---   "dev": "node --watch src/index.js"     ----- изтриваме тетс в скрипт и пействаме това
+
+
+За launch.JSON
+
+--- 
+      "program": "${workspaceFolder}\\src\\index.js",
+            "runtimeArgs": [
+                "--watch"
+            ]
+        }
+
+------ това го копираме на мястото на програм
+
+
+
+първоначална настройка на INDEX>JS
+----
+import express from 'express';
+
+const app = express();
+
+
+app.get('/', (req,res) =>{
+
+    res.send('Продължава да работи');
+});
+
+app.listen(5000, () => console.log('Express Server is listening on http://localhost:5000...')
+);
+--------

@@ -1,0 +1,20 @@
+{
+  "name": "skeleton",
+  "version": "1.0.0",
+  "description": "- [ ] Initialize npm project `npm init -y` \r  - [ ] Change module system\r  - [ ] Add start file `/src/index.js`\r  - [ ] Add dev script\r  - [ ] Config debugger\r  - [ ] Add resources",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.19.2"
+  }
+}
