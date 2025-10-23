@@ -74,22 +74,22 @@
  - [x] Add logout action
 
 ### 8. Authentication
- - [ ] Install and use cookie-parser `npm i cookie-parser`
- - [ ] Create auth middleware
-    - [ ] Allow if guest (no token)
-    - [ ] Verify token (clear session if invalid)
-    - [ ] Attach decoded token to req.user (if token is valid)
- - [ ] Use auth middleware
+ - [x] Install and use cookie-parser `npm i cookie-parser`
+ - [x] Create auth middleware
+    - [x] Allow if guest (no token)
+    - [x] Verify token (clear session if invalid)
+    - [x] Attach decoded token to req.user (if token is valid)
+ - [x] Use auth middleware
 
 ### 9. Authorization
- - [ ] Create isAuth middleware
- - [ ] Create isGuest middleware
- - [ ] Add route guards
- - [ ] Add not found page
+ - [x] Create isAuth middleware
+ - [x] Create isGuest middleware
+ - [x] Add route guards
+ - [x] Add not found page
 
 ### 10. Dynamic content
- - [ ] Add user data to handlebars context
- - [ ] Dynamic navigation
+ - [x] Add user data to handlebars context
+ - [x] Dynamic navigation
  - [ ] Dynamic titles
  - [ ] BONUS: Set page title from view
   
