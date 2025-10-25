@@ -11,10 +11,10 @@ userController.get('/register', isGuest, (req,res) =>{
 });
 
 userController.post('/register', isGuest, async(req, res) => {
-    const {email, password} = req.body;
+    const {email, password, repeatPassword} = req.body;
     
     try {
-        const token = await userService.register(email, password);
+        const token = await userService.register(email, password, repeatPassword);
 
         res.cookie('auth', token);
         res.redirect('/');
@@ -34,10 +34,18 @@ userController.get('/login', isGuest, (req,res) =>{
 
 userController.post('/login', isGuest, async(req, res) => {
     const {email, password} = req.body;
-    const token = await userService.login(email, password);
-    res.cookie('auth', token);
+    
+    try {
+        const token = await userService.login(email, password);
 
-    res.redirect('/');
+        res.cookie('auth', token);
+        res.redirect('/');
+        
+    } catch (err) {
+        res.render('users/login', {
+            error: getErrorMessage(err), 
+            user:{email}});
+    }
    
 });
 
