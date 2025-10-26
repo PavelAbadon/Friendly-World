@@ -1,11 +1,11 @@
 import { Router } from "express";
+import { mythService } from "../services/mythService.js";
 
 const homeController = Router();
 
-homeController.get('/', (req,res) =>{
-   //Проверка дали authentication работи правилно
-   //console.log(req.user);
-   res.render('home', {pageTitle: 'Home Page'});
+homeController.get('/', async (req,res) =>{
+   const mythsLatestTree = await mythService.getLatestThree();
+   res.render('home', {myths: mythsLatestTree, pageTitle: 'Home Page'});
 });
 
 export default homeController;

@@ -11,6 +11,10 @@ function create(mythData, userId) {
     });
 }
 
+function getLatestThree (){
+    return Myth.find().sort({_id: -1}).limit(3);
+}
+
 export const mythService = {
-    create, getAll
+    getLatestThree, create, getAll
 };
