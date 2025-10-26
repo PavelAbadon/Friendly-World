@@ -1,40 +1,49 @@
 import { Schema, Types, model } from "mongoose";
 
-const mythShema = new Schema({
-    name:{
+const mythSchema = new Schema({
+    name: {
         type: String,
-        required:[true, 'Name is required']
+        required: [true, 'Name is required'],
+        minLength: [2, 'Name is too short!'],
     },
-    origin:{
+    origin: {
         type: String,
-        required:[true, 'Origin is required']
+        required: [true, 'Origin is required'],
+        minLength: [3, 'Origin is too short!'],
     },
-    role:{
+    role: {
         type: String,
-        required:[true, 'Role is required']
+        required: [true, 'Role is required'],
+        minLength: [2, 'Role is too short!'],
     },
-    imageUrl:{
+    imageUrl: {
         type: String,
-        required:[true, 'Image is required']
+        required: [true, 'Image is required'],
+        match: [/^https?:\/\//, 'Image URL is invalid!'],
     },
-    symbol:{
+    symbol: {
         type: String,
-        required:[true, 'Symbol is required']
+        required: [true, 'Symbol is required'],
+        minLength: [3, 'Symbol is too short!'],
+        maxLength: [40, 'Symbol is too long!'],
     },
-    era:{
+    era: {
         type: String,
-        required:[true, 'Era is required']
+        required: [true, 'Era is required'],
+        minLength: [5, 'Era is too short!'],
+        maxLength: [15, 'Era is too long!'],
     },
-    description:{
+    description: {
         type: String,
-        required:[true, 'Description is required']
+        required: [true, 'Description is required'],
+        minLength: [10, 'Description is too short!'],
     },
-    owner:{
+    owner: {
         type: Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
     },
 });
 
-const Myth = model('Myth', mythShema);
+const Myth = model('Myth', mythSchema);
 
 export default Myth;
