@@ -46,4 +46,16 @@ mythController.get('/', async (req, res) => {
     }
 });
 
+mythController.get('/:id/details', async (req, res)=>{
+    const mythID = req.params.id
+    const myth = await mythService.getOne(mythID);
+
+    res.render('myths/details', { 
+            pageTitle: 'Details page', 
+            myth
+        })
+
+
+})
+
 export default mythController;

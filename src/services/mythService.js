@@ -15,6 +15,10 @@ function getLatestThree (){
     return Myth.find().sort({_id: -1}).limit(3);
 }
 
+function getOne(mythID){
+    return Myth.findById(mythID);
+}
+
 export const mythService = {
-    getLatestThree, create, getAll
+    getLatestThree, create, getAll, getOne
 };
