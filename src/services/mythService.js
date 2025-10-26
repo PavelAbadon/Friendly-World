@@ -1,5 +1,9 @@
 import Myth from "../models/Myth.js";
 
+function getAll (){
+    return Myth.find();
+}
+
 function create(mythData, userId) {
     return Myth.create({
         ...mythData,
@@ -8,5 +12,5 @@ function create(mythData, userId) {
 }
 
 export const mythService = {
-    create,
+    create, getAll
 };
