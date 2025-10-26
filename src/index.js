@@ -11,7 +11,7 @@ const app = express();
 
 try {
     await mongoose.connect('mongodb://localhost:27017', {
-    dbname: 'FriendlyWorld'
+    dbname: 'MythAndLegends'
 });
 
 console.log("Перфектно базата данни е вързана успешно");
@@ -49,5 +49,5 @@ app.use(authMiddleware)
 // Add route
 app.use(routes); 
 
-app.listen(5000, () => console.log('Express Server is listening on http://localhost:5000...')
+app.listen(3000, () => console.log('Express Server is listening on http://localhost:3000...')
 );

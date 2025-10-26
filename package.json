@@ -1,9 +1,10 @@
 {
   "name": "skeleton",
   "version": "1.0.0",
-  "description": "- [ ] Initialize npm project `npm init -y` \r  - [ ] Change module system\r  - [ ] Add start file `/src/index.js`\r  - [ ] Add dev script\r  - [ ] Config debugger\r  - [ ] Add resources",
+  "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "node --watch src/index.js"
   },
   "keywords": [],
