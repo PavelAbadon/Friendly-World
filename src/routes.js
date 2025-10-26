@@ -2,6 +2,7 @@ import { Router } from "express";
 import homeController from "./contollers/homeController.js";
 import errorController from "./contollers/errorController.js";
 import userController from "./contollers/userController.js";
+import mythController from "./contollers/mythController.js";
 
 
 const routes = Router();
@@ -10,6 +11,9 @@ routes.use(homeController);
 
 // UserController
 routes.use('/users', userController);
+
+// mythController
+routes.use('/myths', mythController);
 
 
 
